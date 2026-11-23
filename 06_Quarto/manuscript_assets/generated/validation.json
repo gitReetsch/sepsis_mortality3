@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-23",
+  "render": "passed",
+  "relocated_render_without_preexisting_images": "passed; document.xml identical",
+  "word_open_and_pdf_export": "passed",
+  "pages_visually_reviewed": 23,
+  "xml_validation": "all DOCX XML parts parsed",
+  "visible_figures": "all three match freshly generated PNGs",
+  "source_code_and_result_files": "byte-identical to mortality_2026-11-20",
+  "deaths_90d": 18587,
+  "original_word_deaths_90d": 18589,
+  "tables_generated_from_rds": 2,
+  "figures_generated_from_rds": 3,
+  "input_sha256": "7d226c330545c433c396f2886db96319deb65b3123fc26cb0c920b77f76f4ad1",
+  "limitations": [
+    "Supplement remains static/unmodified",
+    "Ordering uncertainty 1.34% retained from Word; no numerator/denominator in supplied export",
+    "Analysis R version absent from source metadata; rendering versions recorded separately"
+  ],
+  "inline_code_refactor": {
+    "render": "passed without render_main.R and media directory",
+    "document_xml_styles_and_images": "identical to visually reviewed output"
+  },
+  "existing_project_integration": {
+    "standalone_render": "passed",
+    "execute_dir_project_render": "passed; document XML identical",
+    "removed": "own project configuration, README files, standalone installer, wordcount filter and separate table XML files",
+    "layout": "23 pages; pages 2\u201323 pixel-identical, first page word-count placeholders",
+    "package_installation": "missing packages installed by QMD; all packages already available during validation"
+  }
+}

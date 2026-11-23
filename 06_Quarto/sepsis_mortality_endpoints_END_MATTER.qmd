@@ -1,0 +1,56 @@
+---
+lang: en-GB
+format:
+  docx:
+    reference-doc: manuscript_assets/reference-main.docx
+    toc: false
+    number-sections: false
+    output-file: sepsis_mortality_endpoints_END_MATTER.docx
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+editor_options:
+  chunk_output_type: console
+---
+
+::: {custom-style="Title 1"}
+End Matter
+:::
+
+# Contributorship
+
+Reto Jörg: Conceptualization, Methodology, Data curation, Formal analysis, Visualization, Writing – original draft, Writing – review & editing.
+
+Marie-Annick Le Pogam: Conceptualization, Methodology, Writing – original draft, Writing – review & editing.
+
+Tapio Niemi: Conceptualization, Methodology, Writing – review & editing.
+
+Olga Endrich: Conceptualization, Methodology, Writing – review & editing.
+
+Matthias Schwenkglenks: Conceptualization, Methodology, Writing – review & editing.
+
+Uchenna Kennedy: Conceptualization, Methodology, Writing – review & editing.
+
+Joachim Marti: Conceptualization, Methodology, Supervision, Writing – review & editing.
+
+# Ethics and other permissions
+
+The Swiss Federal Statistical Office performed person-level data linkage under the Swiss Federal Statistics Act and applicable data-protection provisions. The researchers received anonymised records without direct personal identifiers. Ethics committee approval was not required because the study used anonymised routinely collected administrative data and was not subject to the Swiss Human Research Act.
+
+# Funding
+
+This study received no specific external grant funding. The work was conducted as part of Reto Jörg’s employment at the Swiss Health Observatory (Obsan) and doctoral research at the University of Lausanne.
+
+# Conflict of interests
+
+No known conflict of interests
+
+# Acknowledgments
+
+Generative artificial intelligence tools were used to support language editing, manuscript structuring, and review of R code during manuscript preparation. All analytical decisions, statistical methods, code, interpretations, and final manuscript content were reviewed and approved by the authors. No generative artificial intelligence tool had access to identifiable or confidential patient-level data.
+
+# Data Availability Statement
+
+The data underlying this study cannot be shared by the authors. The hospital discharge and mortality data are held by the Swiss Federal Statistical Office (FSO). Access may be requested from the FSO and is subject to the applicable data-access and data-protection requirements.

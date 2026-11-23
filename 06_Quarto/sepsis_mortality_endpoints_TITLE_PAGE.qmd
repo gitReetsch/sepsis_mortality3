@@ -1,0 +1,41 @@
+---
+lang: en-GB
+format:
+  docx:
+    reference-doc: manuscript_assets/reference-main.docx
+    toc: false
+    number-sections: false
+    output-file: sepsis_mortality_endpoints_TITLE_PAGE.docx
+---
+::: {custom-style="Title 1"}
+In-hospital and 90-Day Post-Admission Mortality Yield Different Hospital Classifications After Sepsis: A Nationwide Swiss Cohort Study
+:::
+
+Reto Jörg¹˒², Marie-Annick Le Pogam¹, Tapio Niemi¹, Olga Endrich³˒⁴, Matthias Schwenkglenks⁵, Uchenna Kennedy⁶, Joachim Marti¹
+
+¹ Department of Epidemiology and Health Systems, Centre for Primary Care and Public Health (Unisanté), University of Lausanne, Lausanne, Switzerland
+
+² Swiss Health Observatory (Obsan), Neuchâtel, Switzerland
+
+³ Medical Directorate, Inselspital, Bern University Hospital, Bern, Switzerland
+
+⁴ University Institute of Clinical Chemistry, University of Bern, Bern, Switzerland
+
+⁵ Health Economics Facility, Department of Public Health, University of Basel, Basel, Switzerland
+
+⁶ Children’s Research Center, Division of Pediatric Urology, Department of Pediatric Surgery, University Children’s Hospital Zurich, Zurich, Switzerland
+
+
+Corresponding author:\
+Reto Jörg\
+Swiss Health Observatory (Obsan)\
+Espace de l’Europe 10\
+CH-2010 Neuchâtel, Switzerland\
+Email: reto.jorg\@unil.ch
+
+
+Running title: Sepsis mortality endpoints
+
+
+Abstract word count: \[to be added\]\
+Main text word count: \[to be added\]

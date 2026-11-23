@@ -1,0 +1,61 @@
+---
+lang: en-GB
+format:
+  docx:
+    reference-doc: manuscript_assets/reference-main.docx
+    toc: false
+    number-sections: false
+    output-file: sepsis_mortality_endpoints_COVER_LETTER.docx
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r}
+#| label: packages
+#| include: false
+packages <- c("knitr", "rmarkdown")
+missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]
+if (length(missing)) install.packages(missing, repos = "https://cloud.r-project.org")
+```
+
+```{r}
+#| label: read-results
+#| include: false
+# Same project and saved analysis as the main report.
+root <- "C:/dev/gitRepos/sepsis_mortality3"
+paper_objects <- readRDS(file.path(
+  root, "05_Ergebnisse", "paper_objects_sepsis_analysis_2026-11-17.rds"
+))
+numbers <- paper_objects$paper_numbers
+fmt_n <- function(x) formatC(x, format = "f", digits = 0, big.mark = ",")
+fmt_d <- function(x, digits = 1) formatC(x, format = "f", digits = digits)
+```
+
+Dear Editors,
+
+Please consider our manuscript, “In-hospital and 90-Day Post-Admission Mortality Yield Different Hospital Classifications After Sepsis: A Nationwide Swiss Cohort Study”, for publication as an Original Research Article in the International Journal for Quality in Health Care.
+
+Using nationwide Swiss hospital discharge data linked to mortality records, we examined how mortality endpoint definition and risk-adjustment specification influence hospital classifications after sepsis. Among `r fmt_n(numbers$cohort_size)` patients, a fixed 90-day post-admission endpoint captured `r fmt_d(subset(numbers$inhospital_death_coverage, followup_days == 90)$pct_in_hospital_deaths_covered)`% of index-hospital deaths while including additional deaths after discharge. Replacing in-hospital mortality with this endpoint changed the classification of `r fmt_d(numbers$pct_sites_reclassified_endpoints)`% of hospital sites. Hospital classifications also depended on the risk-adjustment specification.
+
+The study addresses methodological choices relevant to hospital quality measurement and public reporting. It demonstrates advantages of a common observation window while distinguishing more complete mortality ascertainment from validation as a measure of care quality. For Switzerland, the findings highlight the need for an established pathway to link routinely collected hospital discharge and mortality data for national hospital quality monitoring, alongside further development of risk adjustment. Its implications extend beyond Switzerland to healthcare systems seeking to incorporate linked routine data into hospital quality monitoring.
+
+Related work includes Luethi et al. (2026), “Incidence, mortality, and economic burden of sepsis in Switzerland, 2019–2023: a nationwide population-based analysis”, and the Swiss Sepsis Report 2025. These publications provide related epidemiological context and describe the administrative approach to sepsis identification used in our study. The present manuscript addresses a distinct question: how follow-up windows, risk-adjustment specifications and control-limit methods affect hospital mortality comparisons. Copies of these related publications are provided to facilitate editorial assessment of overlap and originality.
+
+This manuscript has not been published previously and is not under consideration elsewhere. All authors have approved the submitted version and its submission to this journal.
+
+Generative artificial intelligence tools were used to assist with language editing, manuscript structuring and review of R code. The authors reviewed all outputs and take full responsibility for the submitted manuscript. This use is disclosed in the Acknowledgments.
+
+Thank you for considering our manuscript.
+
+Yours sincerely,
+
+Reto Jörg\
+On behalf of all authors\
+Swiss Health Observatory (Obsan), Neuchâtel, Switzerland\
+Unisanté, University of Lausanne, Lausanne, Switzerland\
+Email: reto.jorg@unil.ch

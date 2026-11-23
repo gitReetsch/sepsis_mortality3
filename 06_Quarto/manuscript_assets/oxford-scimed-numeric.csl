@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-GB" page-range-format="minimal" demote-non-dropping-particle="never">
+  <info><title>Oxford SCIMED numbered — local manuscript style</title><id>http://www.zotero.org/styles/oxford-scimed-numbered-local</id><updated>2026-10-29T00:00:00+00:00</updated><summary>Numbered square-bracket references based on the journal-linked Oxford SCIMED checklist, September 2024.</summary></info>
+  <macro name="names"><names variable="author"><name name-as-sort-order="all" sort-separator=" " initialize-with="" delimiter=", "/><et-al font-style="italic"/><substitute><names variable="editor"><name name-as-sort-order="all" sort-separator=" " initialize-with="" delimiter=", "/><et-al font-style="italic"/><label form="short" prefix=" (" suffix=")"/></names></substitute></names></macro>
+  <citation collapse="citation-number"><sort><key variable="citation-number"/></sort><layout prefix="[" suffix="]" delimiter=","><text variable="citation-number"/></layout></citation>
+  <bibliography et-al-min="4" et-al-use-first="3" second-field-align="flush" entry-spacing="0" line-spacing="2">
+    <sort><key variable="citation-number"/></sort>
+    <layout suffix="."><text variable="citation-number" suffix=". "/><text macro="names" suffix=". "/><choose><if type="article-journal"><text variable="title" suffix=". "/><text variable="container-title" form="short" font-style="italic" suffix=" "/><date variable="issued"><date-part name="year"/></date><text variable="volume" prefix=";"/><text variable="page" prefix=":"/></if><else><text variable="title" font-style="italic" suffix=". "/><text variable="edition" suffix=". "/><group delimiter=": "><text variable="publisher-place"/><text variable="publisher"/></group><date variable="issued" prefix=", "><date-part name="year"/></date></else></choose><choose><if variable="DOI"><text variable="DOI" prefix=". https://doi.org/"/></if><else-if variable="URL"><text variable="URL" prefix=". "/></else-if></choose></layout>
+  </bibliography>
+</style>

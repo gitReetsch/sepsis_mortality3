@@ -1,0 +1,981 @@
+[
+  {
+    "id": "benchimol2015",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Benchimol",
+        "given": "E. I."
+      },
+      {
+        "family": "Smeeth",
+        "given": "L."
+      },
+      {
+        "family": "Guttmann",
+        "given": "A."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "article-journal",
+    "title": "The REporting of studies Conducted using Observational Routinely-collected health Data (RECORD) Statement",
+    "container-title": "PLoS Medicine",
+    "volume": "12",
+    "page": "e1001885",
+    "DOI": "10.1371/journal.pmed.1001885",
+    "issue": "10",
+    "container-title-short": "PLoS Med"
+  },
+  {
+    "id": "blixt2025",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Blixt",
+        "given": "J. P."
+      },
+      {
+        "family": "Kristoffersen",
+        "given": "D. T."
+      },
+      {
+        "family": "Helgeland",
+        "given": "J."
+      },
+      {
+        "family": "Thoresen",
+        "given": "C."
+      },
+      {
+        "family": "Aylin",
+        "given": "P. P."
+      },
+      {
+        "family": "Tjomsland",
+        "given": "O."
+      }
+    ],
+    "type": "article-journal",
+    "title": "In-hospital versus postdischarge 30-day mortality in patients admitted after acute myocardial infarction (AMI), cerebral stroke or hip fracture: a cohort study based on registry data",
+    "container-title": "BMJ Open Quality",
+    "volume": "14",
+    "page": "e003030",
+    "DOI": "10.1136/bmjoq-2024-003030",
+    "issue": "1",
+    "container-title-short": "BMJ Open Qual"
+  },
+  {
+    "id": "borzecki2010",
+    "issued": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Borzecki",
+        "given": "A. M."
+      },
+      {
+        "family": "Christiansen",
+        "given": "C. L."
+      },
+      {
+        "family": "Chew",
+        "given": "P."
+      },
+      {
+        "family": "Loveland",
+        "given": "S."
+      },
+      {
+        "family": "Rosen",
+        "given": "A. K."
+      }
+    ],
+    "type": "article-journal",
+    "title": "Comparison of in-hospital versus 30-day mortality assessments for selected medical conditions",
+    "container-title": "Medical Care",
+    "volume": "48",
+    "page": "1117–1121",
+    "DOI": "10.1097/MLR.0b013e3181ef9d53",
+    "issue": "12",
+    "container-title-short": "Med Care"
+  },
+  {
+    "id": "breyer2019",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Breyer",
+        "given": "J. Z."
+      },
+      {
+        "family": "Giacomazzi",
+        "given": "J."
+      },
+      {
+        "family": "Kuhmmer",
+        "given": "R."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "article-journal",
+    "title": "Hospital quality indicators: a systematic review",
+    "container-title": "International Journal of Health Care Quality Assurance",
+    "volume": "32",
+    "page": "474–487",
+    "DOI": "10.1108/IJHCQA-04-2018-0091",
+    "issue": "2",
+    "container-title-short": "Int J Health Care Qual Assur"
+  },
+  {
+    "id": "busse2019",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "editor": [
+      {
+        "family": "Busse",
+        "given": "R."
+      },
+      {
+        "family": "Klazinga",
+        "given": "N."
+      },
+      {
+        "family": "Panteli",
+        "given": "D."
+      },
+      {
+        "family": "Quentin",
+        "given": "W."
+      }
+    ],
+    "type": "book",
+    "title": "Improving Healthcare Quality in Europe: Characteristics, Effectiveness and Implementation of Different Strategies",
+    "publisher": "European Observatory on Health Systems and Policies",
+    "publisher-place": "Copenhagen",
+    "URL": "https://www.ncbi.nlm.nih.gov/books/NBK549276/"
+  },
+  {
+    "id": "drye2012",
+    "issued": {
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Drye",
+        "given": "E. E."
+      },
+      {
+        "family": "Normand",
+        "given": "S.-L. T."
+      },
+      {
+        "family": "Wang",
+        "given": "Y."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "article-journal",
+    "title": "Comparison of hospital risk-standardized mortality rates calculated by using in-hospital and 30-day models: an observational study with implications for hospital profiling",
+    "container-title": "Annals of Internal Medicine",
+    "volume": "156",
+    "page": "19–26",
+    "DOI": "10.7326/0003-4819-156-1-201201030-00004",
+    "issue": "1 Pt 1",
+    "container-title-short": "Ann Intern Med"
+  },
+  {
+    "id": "endrich2023",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Endrich",
+        "given": "O."
+      },
+      {
+        "family": "Triep",
+        "given": "K."
+      },
+      {
+        "family": "Schlapbach",
+        "given": "L. J."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "article-journal",
+    "title": "Sensitivity of ICD coding for sepsis in children—a population-based study",
+    "container-title": "Intensive Care Medicine – Paediatric and Neonatal",
+    "volume": "1",
+    "page": "5",
+    "DOI": "10.1007/s44253-023-00006-1",
+    "container-title-short": "Intensive Care Med Paediatr Neonatal"
+  },
+  {
+    "id": "foph2026",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "author": [
+      {
+        "literal": "Federal Office of Public Health"
+      }
+    ],
+    "type": "report",
+    "title": "Quality indicators of the Swiss acute care hospitals 2024",
+    "publisher": "Federal Office of Public Health",
+    "publisher-place": "Bern",
+    "URL": "https://opendata.swiss/en/dataset/qualitatsindikatoren-der-schweizer-akutspitaler-2024"
+  },
+  {
+    "id": "fleischmann2021",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Fleischmann-Struzek",
+        "given": "C."
+      },
+      {
+        "family": "Rose",
+        "given": "N."
+      },
+      {
+        "family": "Freytag",
+        "given": "A."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "article-journal",
+    "title": "Epidemiology and costs of postsepsis morbidity, nursing care dependency, and mortality in Germany, 2013 to 2017",
+    "container-title": "JAMA Network Open",
+    "volume": "4",
+    "page": "e2134290",
+    "DOI": "10.1001/jamanetworkopen.2021.34290",
+    "issue": "11",
+    "container-title-short": "JAMA Netw Open"
+  },
+  {
+    "id": "goldstein1996",
+    "issued": {
+      "date-parts": [
+        [
+          1996
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Goldstein",
+        "given": "H."
+      },
+      {
+        "family": "Spiegelhalter",
+        "given": "D. J."
+      }
+    ],
+    "type": "article-journal",
+    "title": "League tables and their limitations: statistical issues in comparisons of institutional performance",
+    "container-title": "Journal of the Royal Statistical Society: Series A (Statistics in Society)",
+    "volume": "159",
+    "page": "385–409",
+    "DOI": "10.2307/2983325",
+    "issue": "3",
+    "container-title-short": "J R Stat Soc Ser A Stat Soc"
+  },
+  {
+    "id": "has2017",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "author": [
+      {
+        "literal": "Haute Autorité de Santé"
+      }
+    ],
+    "type": "report",
+    "title": "Hospital mortality indicators: foreign experience, literature teachings and guidelines to support public decision-making and the development of indicators in France",
+    "publisher": "Haute Autorité de Santé",
+    "publisher-place": "Saint-Denis La Plaine",
+    "URL": "https://www.has-sante.fr/upload/docs/application/pdf/2020-12/hospital_mortality_indicators_report.pdf"
+  },
+  {
+    "id": "kristoffersen2012",
+    "issued": {
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Kristoffersen",
+        "given": "D. T."
+      },
+      {
+        "family": "Helgeland",
+        "given": "J."
+      },
+      {
+        "family": "Clench-Aas",
+        "given": "J."
+      },
+      {
+        "family": "Laake",
+        "given": "P."
+      },
+      {
+        "family": "Veierød",
+        "given": "M. B."
+      }
+    ],
+    "type": "article-journal",
+    "title": "Comparing hospital mortality—how to count does matter for patients hospitalized for acute myocardial infarction (AMI), stroke and hip fracture",
+    "container-title": "BMC Health Services Research",
+    "volume": "12",
+    "page": "364",
+    "DOI": "10.1186/1472-6963-12-364",
+    "container-title-short": "BMC Health Serv Res"
+  },
+  {
+    "id": "lamarche2015",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Lamarche-Vadel",
+        "given": "A."
+      },
+      {
+        "family": "Ngantcha",
+        "given": "M."
+      },
+      {
+        "family": "Le Pogam",
+        "given": "M.-A."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "article-journal",
+    "title": "Hospital comparisons based on mortality: revisiting the choice of postadmission timeframe and evaluating the contribution of cause-of-death data, France, 2009",
+    "container-title": "Medical Care",
+    "volume": "53",
+    "page": "736–742",
+    "DOI": "10.1097/MLR.0000000000000376",
+    "issue": "8",
+    "container-title-short": "Med Care"
+  },
+  {
+    "id": "law2024",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Law",
+        "given": "A. C."
+      },
+      {
+        "family": "Bosch",
+        "given": "N. A."
+      },
+      {
+        "family": "Song",
+        "given": "Y."
+      },
+      {
+        "family": "Tale",
+        "given": "A."
+      },
+      {
+        "family": "Lasser",
+        "given": "K. E."
+      },
+      {
+        "family": "Walkey",
+        "given": "A. J."
+      }
+    ],
+    "type": "article-journal",
+    "title": "In-hospital vs 30-day sepsis mortality at US safety-net and non–safety-net hospitals",
+    "container-title": "JAMA Network Open",
+    "volume": "7",
+    "page": "e2412873",
+    "DOI": "10.1001/jamanetworkopen.2024.12873",
+    "issue": "5",
+    "container-title-short": "JAMA Netw Open"
+  },
+  {
+    "id": "luethi2026",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Luethi",
+        "given": "N."
+      },
+      {
+        "family": "Niemi",
+        "given": "T."
+      },
+      {
+        "family": "Endrich",
+        "given": "O."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "article-journal",
+    "title": "Incidence, mortality, and economic burden of sepsis in Switzerland, 2019–2023: a nationwide population-based analysis",
+    "container-title": "International Journal of Infectious Diseases",
+    "volume": "163",
+    "page": "108262",
+    "DOI": "10.1016/j.ijid.2025.108262",
+    "container-title-short": "Int J Infect Dis"
+  },
+  {
+    "id": "mohr2020",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Mohr",
+        "given": "N. M."
+      },
+      {
+        "family": "Zebrowski",
+        "given": "A. M."
+      },
+      {
+        "family": "Gaieski",
+        "given": "D. F."
+      },
+      {
+        "family": "Buckler",
+        "given": "D. G."
+      },
+      {
+        "family": "Carr",
+        "given": "B. G."
+      }
+    ],
+    "type": "article-journal",
+    "title": "Inpatient hospital performance is associated with post-discharge sepsis mortality",
+    "container-title": "Critical Care",
+    "volume": "24",
+    "page": "626",
+    "DOI": "10.1186/s13054-020-03341-3",
+    "container-title-short": "Crit Care"
+  },
+  {
+    "id": "pitches2007",
+    "issued": {
+      "date-parts": [
+        [
+          2007
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Pitches",
+        "given": "D. W."
+      },
+      {
+        "family": "Mohammed",
+        "given": "M. A."
+      },
+      {
+        "family": "Lilford",
+        "given": "R. J."
+      }
+    ],
+    "type": "article-journal",
+    "title": "What is the empirical evidence that hospitals with higher-risk adjusted mortality rates provide poorer quality care? A systematic review of the literature",
+    "container-title": "BMC Health Services Research",
+    "volume": "7",
+    "page": "91",
+    "DOI": "10.1186/1472-6963-7-91",
+    "container-title-short": "BMC Health Serv Res"
+  },
+  {
+    "id": "rhee2017",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Rhee",
+        "given": "C."
+      },
+      {
+        "family": "Dantes",
+        "given": "R."
+      },
+      {
+        "family": "Epstein",
+        "given": "L."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "article-journal",
+    "title": "Incidence and trends of sepsis in US hospitals using clinical vs claims data, 2009–2014",
+    "container-title": "JAMA",
+    "volume": "318",
+    "page": "1241–1249",
+    "DOI": "10.1001/jama.2017.13836",
+    "issue": "13"
+  },
+  {
+    "id": "schisterman2009",
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Schisterman",
+        "given": "E. F."
+      },
+      {
+        "family": "Cole",
+        "given": "S. R."
+      },
+      {
+        "family": "Platt",
+        "given": "R. W."
+      }
+    ],
+    "type": "article-journal",
+    "title": "Overadjustment bias and unnecessary adjustment in epidemiologic studies",
+    "container-title": "Epidemiology",
+    "volume": "20",
+    "page": "488–495",
+    "DOI": "10.1097/EDE.0b013e3181a819a1",
+    "issue": "4"
+  },
+  {
+    "id": "shankar2016",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Shankar-Hari",
+        "given": "M."
+      },
+      {
+        "family": "Ambler",
+        "given": "M."
+      },
+      {
+        "family": "Mahalingasivam",
+        "given": "V."
+      },
+      {
+        "family": "Jones",
+        "given": "A."
+      },
+      {
+        "family": "Rowan",
+        "given": "K."
+      },
+      {
+        "family": "Rubenfeld",
+        "given": "G. D."
+      }
+    ],
+    "type": "article-journal",
+    "title": "Evidence for a causal link between sepsis and long-term mortality: a systematic review of epidemiologic studies",
+    "container-title": "Critical Care",
+    "volume": "20",
+    "page": "101",
+    "DOI": "10.1186/s13054-016-1276-7",
+    "container-title-short": "Crit Care"
+  },
+  {
+    "id": "singer2016",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Singer",
+        "given": "M."
+      },
+      {
+        "family": "Deutschman",
+        "given": "C. S."
+      },
+      {
+        "family": "Seymour",
+        "given": "C. W."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "article-journal",
+    "title": "The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3)",
+    "container-title": "JAMA",
+    "volume": "315",
+    "page": "801–810",
+    "DOI": "10.1001/jama.2016.0287",
+    "issue": "8"
+  },
+  {
+    "id": "spiegelhalter2005a",
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Spiegelhalter",
+        "given": "D. J."
+      }
+    ],
+    "type": "article-journal",
+    "title": "Funnel plots for comparing institutional performance",
+    "container-title": "Statistics in Medicine",
+    "volume": "24",
+    "page": "1185–1202",
+    "DOI": "10.1002/sim.1970",
+    "issue": "8",
+    "container-title-short": "Stat Med"
+  },
+  {
+    "id": "spiegelhalter2005b",
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Spiegelhalter",
+        "given": "D. J."
+      }
+    ],
+    "type": "article-journal",
+    "title": "Handling over-dispersion of performance indicators",
+    "container-title": "Quality and Safety in Health Care",
+    "volume": "14",
+    "page": "347–351",
+    "DOI": "10.1136/qshc.2005.013755",
+    "issue": "5",
+    "container-title-short": "Qual Saf Health Care"
+  },
+  {
+    "id": "swiss2025",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "author": [
+      {
+        "literal": "Swiss Sepsis Program"
+      }
+    ],
+    "type": "report",
+    "title": "Swiss Sepsis Report 2025: Burden of Sepsis in Switzerland, 2019–2023. Findings from a Nationwide Population-Based Analysis",
+    "publisher": "Swiss Sepsis Program",
+    "edition": "25.1",
+    "URL": "https://sepsis.ch/wp-content/uploads/2025/09/Swiss-Sepsis-Report-EN_.pdf"
+  },
+  {
+    "id": "vancalster2019",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Van Calster",
+        "given": "B."
+      },
+      {
+        "family": "McLernon",
+        "given": "D. J."
+      },
+      {
+        "family": "van Smeden",
+        "given": "M."
+      },
+      {
+        "family": "Wynants",
+        "given": "L."
+      },
+      {
+        "family": "Steyerberg",
+        "given": "E. W."
+      }
+    ],
+    "type": "article-journal",
+    "title": "Calibration: the Achilles heel of predictive analytics",
+    "container-title": "BMC Medicine",
+    "volume": "17",
+    "page": "230",
+    "DOI": "10.1186/s12916-019-1466-7",
+    "container-title-short": "BMC Med"
+  },
+  {
+    "id": "vanwalraven2009",
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "van Walraven",
+        "given": "C."
+      },
+      {
+        "family": "Austin",
+        "given": "P. C."
+      },
+      {
+        "family": "Jennings",
+        "given": "A."
+      },
+      {
+        "family": "Quan",
+        "given": "H."
+      },
+      {
+        "family": "Forster",
+        "given": "A. J."
+      }
+    ],
+    "type": "article-journal",
+    "title": "A modification of the Elixhauser comorbidity measures into a point system for hospital death using administrative data",
+    "container-title": "Medical Care",
+    "volume": "47",
+    "page": "626–633",
+    "DOI": "10.1097/MLR.0b013e31819432e5",
+    "issue": "6",
+    "container-title-short": "Med Care"
+  },
+  {
+    "id": "vogel2024",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Vogel",
+        "given": "J."
+      },
+      {
+        "family": "Sapin",
+        "given": "M."
+      },
+      {
+        "family": "Kuklinski",
+        "given": "D."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "type": "report",
+    "title": "Quality Monitoring and Public Reporting: Recommendations for the Swiss Healthcare System. Report Mandated by the Federal Quality Commission",
+    "publisher": "Federal Quality Commission",
+    "publisher-place": "Bern",
+    "URL": "https://aris.supsi.ch/entities/publication/bb58481a-38fd-41b3-b062-65f81c65245c"
+  },
+  {
+    "id": "vonelm2007",
+    "issued": {
+      "date-parts": [
+        [
+          2007
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "von Elm",
+        "given": "E."
+      },
+      {
+        "family": "Altman",
+        "given": "D. G."
+      },
+      {
+        "family": "Egger",
+        "given": "M."
+      },
+      {
+        "family": "Pocock",
+        "given": "S. J."
+      },
+      {
+        "family": "Gøtzsche",
+        "given": "P. C."
+      },
+      {
+        "family": "Vandenbroucke",
+        "given": "J. P."
+      }
+    ],
+    "type": "article-journal",
+    "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: guidelines for reporting observational studies",
+    "container-title": "PLoS Medicine",
+    "volume": "4",
+    "page": "e296",
+    "DOI": "10.1371/journal.pmed.0040296",
+    "issue": "10",
+    "container-title-short": "PLoS Med"
+  },
+  {
+    "id": "zwahlen2022",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Zwahlen",
+        "given": "M."
+      },
+      {
+        "family": "Dressel",
+        "given": "H."
+      },
+      {
+        "family": "Geneviève",
+        "given": "L. D."
+      },
+      {
+        "family": "Rachamin",
+        "given": "Y."
+      }
+    ],
+    "type": "report",
+    "title": "Synthesis Working Paper: Health Care Data. National Research Programme 74 “Smarter Health Care”",
+    "publisher": "Swiss National Science Foundation",
+    "publisher-place": "Bern",
+    "URL": "https://www.smarterhealthcare.ch/fileadmin/user_upload/Website/Downloads/nrp74-synthesis-working-paper-health-care-data-2.pdf"
+  }
+]
