@@ -159,7 +159,7 @@ In-hospital and 90-Day Post-Admission Mortality Yield Different Hospital Classif
 
 **Background:** In-hospital mortality is sensitive to discharge and transfer practices. We examined whether hospital mortality classifications after sepsis differ when mortality is measured during the index stay or within 90 days of admission, and how classifications vary with risk-adjustment and control-limit methods.
 
-**Methods:** In a nationwide retrospective cohort study, we linked Swiss acute-care discharge records (2019–2024) to national mortality data through 2025. We selected one sepsis-related index hospitalisation per patient during 2021–2024 after a 24-month period without a recorded sepsis hospitalisation. Expected mortality was estimated using logistic regression models with different risk-adjustment specifications. Hospital sites with at least `r fmt_n(hospital$selected_threshold_summary$threshold)` eligible index hospitalisations were classified using observed-to-expected mortality ratios and 95% funnel-plot control limits. Sites were classified as having lower-than-expected mortality, mortality within the expected range, or higher-than-expected mortality.
+**Methods:** This nationwide retrospective cohort study used routinely collected Swiss acute-care hospital discharge records from the Health Services Statistics (2019–2024), linked to national mortality records from the Vital Statistics through 2025. We selected one sepsis-related index hospitalisation per patient during 2021–2024 after a 24-month period without a recorded sepsis hospitalisation. Expected mortality was estimated using logistic regression models with different risk-adjustment specifications. Hospital sites with at least `r fmt_n(hospital$selected_threshold_summary$threshold)` eligible index hospitalisations were classified using observed-to-expected mortality ratios and 95% funnel-plot control limits. Sites were classified as having lower-than-expected mortality, mortality within the expected range, or higher-than-expected mortality.
 
 **Results:** Among `r fmt_n(numbers$cohort_size)` patients with an eligible index sepsis hospitalisation, in-hospital mortality was `r fmt_d(numbers$mortality_inhospital_pct)`% (`r fmt_n(numbers$deaths_inhospital)` deaths), and 90-day post-admission mortality was `r fmt_d(numbers$mortality_90d_pct)`% (`r fmt_n(numbers$deaths_90d)` deaths). The 90-day endpoint included `r fmt_d(coverage90$pct_in_hospital_deaths_covered)`% of in-hospital deaths; `r fmt_d(coverage90$pct_deaths_after_discharge)`% of deaths within 90 days occurred after discharge. Hospital-level analyses included `r fmt_n(numbers$hospital_cases)` patients across `r fmt_n(numbers$hospital_sites)` sites. With the fully adjusted model and overdispersion-adjusted limits, `r fmt_n(numbers$sites_reclassified_endpoints)` sites (`r fmt_d(numbers$pct_sites_reclassified_endpoints)`%) changed mortality classification between endpoints, with changes occurring in both directions. Holding 90-day mortality constant, `r fmt_n(risk_age$n_changed)` sites (`r fmt_d(risk_age$pct_changed)`%) were classified differently after replacing age-and-sex adjustment with the fully adjusted model. For 90-day mortality under the fully adjusted model, all `r fmt_n(numbers$control_limits_at_90d$same_category)` hospital sites retained the same classification with conventional Poisson and overdispersion-adjusted control limits.
 
@@ -181,7 +181,7 @@ In-hospital mortality ends observation at discharge from the index hospital, lim
 
 The duration of that window is itself an important methodological choice. A 30-day endpoint can exclude deaths during prolonged hospitalisations, whereas longer follow-up increasingly includes deaths potentially influenced by subsequent care, comorbidity and other health events. In France, extending follow-up from 30 to 90 days substantially increased the proportion of in-hospital deaths captured [@lamarche2015]. More recently, in a US sepsis study, differences between hospital groups were attenuated when 30-day rather than in-hospital mortality was used, highlighting the potential influence of discharge practices [@law2024].
 
-In Switzerland, the Swiss Inpatient Quality Indicators (CH-IQI) report crude mortality rates and age- and sex-standardized mortality ratios for selected diagnoses and procedures, restricted to in-hospital deaths [@foph2026]. Although national hospital discharge and mortality data are routinely collected, linkage between these sources is not part of routine hospital quality monitoring [@zwahlen2022]. Sepsis provides a relevant setting for examining these measurement choices because mortality remains substantial after hospital discharge [@luethi2026; @fleischmann2021]. Comparisons of sepsis mortality between hospitals may also be sensitive to differences in case mix, discharge practices and care pathways [@law2024; @mohr2020], as well as variation in sepsis identification based on administrative coding [@rhee2017].
+In Switzerland, the Swiss Inpatient Quality Indicators (CH-IQI) report crude and risk-adjusted mortality for selected diagnoses and procedures, with adjustment limited to age and sex for most indicators. However, all CH-IQI mortality indicators are restricted to in-hospital deaths [@foph2024]. Although national hospital discharge and mortality data are routinely collected, linkage between these sources is not part of routine hospital quality monitoring. Broader barriers to the secondary use of health data in Switzerland include fragmented data infrastructures, legal uncertainties and complex data-access procedures [@zwahlen2022]. Sepsis provides a relevant setting for examining how mortality endpoint definitions affect hospital comparisons because mortality remains substantial after hospital discharge [@luethi2026; @fleischmann2021]. Comparisons of sepsis mortality between hospitals may also be sensitive to differences in case mix, discharge practices and care pathways [@law2024; @lamarche2015], as well as variation in sepsis identification based on administrative coding [@rhee2017].
 
 Using nationwide Swiss hospital discharge data linked to mortality records, we investigated how methodological choices in mortality measurement affect hospital comparisons among patients hospitalised with sepsis. We examined (1) variation in mortality according to follow-up duration and whether follow-up began at admission or discharge; (2) changes in hospital classification between in-hospital and 90-day post-admission mortality; and (3) sensitivity of classification to risk-adjustment models and statistical control limits.
 
@@ -189,7 +189,7 @@ Using nationwide Swiss hospital discharge data linked to mortality records, we i
 
 ## Study design and data sources
 
-This nationwide retrospective cohort study used Swiss acute-care hospital discharge records from the Healthcare Statistics (GVS; 2019–2024), linked by the Swiss Federal Statistical Office (FSO) to national Vital Statistics (BEVNAT; deaths through 31 December 2025). GVS supplied patient and hospitalisation characteristics and in-hospital deaths; BEVNAT supplied deaths after discharge. Cause of Death Statistics (CoD) through 2024 informed supplementary descriptive analyses.
+This nationwide retrospective cohort study used Swiss acute-care hospital discharge records from the Health Services Statistics (GVS; 2019–2024), linked by the Swiss Federal Statistical Office (FSO) to national Vital Statistics (BEVNAT; deaths through 31 December 2025). GVS supplied patient and hospitalisation characteristics and in-hospital deaths; BEVNAT supplied deaths after discharge. Cause of Death Statistics (CoD) through 2024 informed supplementary descriptive analyses.
 
 
 ## Study population and index hospitalisation
@@ -199,13 +199,13 @@ We included inpatient records of Swiss residents discharged during 2019–2024, 
 
 
 
-For each patient, we retained the first eligible sepsis hospitalisation in 2021–2024 following 24 months without a recorded hospitalisation meeting the study sepsis definition. Records from 2019–2020 provided the initial lookback period. All eligible patients were included; no formal sample-size calculation was performed. For data-protection reasons, only the discharge month was available, not exact admission or discharge dates. For patients with a recorded death, FSO-provided discharge-to-death intervals enabled chronological ordering of hospitalisations within the same month. Ordering remained uncertain for 1.34% of index hospitalisations, all among patients without a recorded death. These records were ordered by anonymised encounter identifier, retaining the first eligible hospitalisation. Figure 1 summarises cohort selection.
+For each patient, we retained the first eligible sepsis hospitalisation in 2021–2024 following 24 months without a recorded hospitalisation meeting the study sepsis definition. Records from 2019–2020 provided the initial lookback period. All eligible patients were included without a formal sample-size calculation. For data-protection reasons, only the discharge month was available, not exact admission or discharge dates. For patients with a recorded death, FSO-provided discharge-to-death intervals enabled chronological ordering of hospitalisations within the same month. Ordering remained uncertain for 1.34% of index hospitalisations, all among patients without a recorded death. These records were ordered by anonymised encounter identifier, retaining the first eligible hospitalisation. Figure 1 summarises cohort selection.
 
 
 ## Mortality outcomes
 
 
-The primary hospital-level comparison contrasted deaths during the index hospitalisation (in-hospital mortality) with all-cause mortality within 90 days of index admission (90-day post-admission mortality), including deaths after discharge and during subsequent hospitalisations. We also estimated all-cause mortality at 30, 60, 90, 180 and 365 days from admission and discharge. Time from admission to death was reconstructed as episode length plus the discharge-to-death interval, which was set to zero for index-hospital deaths. Episode length includes time spent outside hospital during temporary discharges. For patients without a recorded death, discharge was approximated by the last day of the recorded discharge month, yielding the shortest follow-up to administrative censoring on 31 December 2025. Admission-anchored follow-up was calculated as estimated post-discharge follow-up plus episode length.
+The primary hospital-level comparison contrasted deaths during the index hospitalisation (in-hospital mortality) with all-cause mortality within 90 days of index admission (90-day post-admission mortality), including deaths after discharge and during subsequent hospitalisations. We also estimated all-cause mortality at 30, 60, 90, 180 and 365 days from admission and discharge. Time from admission to death was reconstructed as episode length plus the discharge-to-death interval, which was set to zero for index-hospital deaths. For patients without a recorded death, discharge was approximated by the last day of the recorded discharge month, yielding the shortest possible follow-up to administrative censoring on 31 December 2025. Admission-anchored follow-up was then calculated as estimated post-discharge follow-up plus episode length. Operational definitions and calculation details are provided in Supplementary Section B.
 
 
 ## Statistical analysis
@@ -215,19 +215,19 @@ Mortality was summarised using counts, proportions and Kaplan–Meier estimates.
 
 
 
-Separate logistic regression models estimated expected in-hospital and 90-day post-admission mortality. Routinely recorded covariates were selected based on clinical relevance and previous sepsis mortality and hospital-comparison studies. Four specifications were assessed: (1) unadjusted; (2) adjusted for age and sex; (3) fully adjusted for age group, sex, the van Walraven Elixhauser comorbidity score [@vanwalraven2009], admission type, position of the sepsis-triggering diagnosis, and a diagnosis-based sepsis severity proxy; and (4) the full model plus an age-group-by-Elixhauser-score interaction (Supplementary Table B1).
+Separate logistic regression models estimated expected in-hospital and 90-day post-admission mortality. Routinely recorded covariates were selected based on clinical relevance and previous sepsis mortality and hospital-comparison studies [@mohr2020; @lamarche2015]. Four specifications were assessed: (1) unadjusted; (2) adjusted for age and sex; (3) fully adjusted for age group, sex, the van Walraven Elixhauser comorbidity score [@vanwalraven2009], admission type, position of the sepsis-triggering diagnosis, and a diagnosis-based sepsis severity proxy; and (4) the full model plus an age-group-by-Elixhauser-score interaction (Supplementary Table B2).
 
 
 
-Age- and sex-adjustment reflected Swiss hospital mortality reporting [@foph2026]; the fully adjusted model was used for the primary comparison. Intensive care admission and mechanical ventilation were excluded from adjustment because they reflect care delivered after admission [@schisterman2009]. Further rationale and limitations of covariate selection are described in Supplementary Section B.
+Age- and sex-adjustment reflected standard Swiss hospital mortality reporting [@foph2024]; the fully adjusted model was used for the primary comparison. Intensive care admission and mechanical ventilation were excluded from adjustment because they reflect care processes that may lie on the causal pathway between hospital care and mortality [@schisterman2009]. Further rationale and limitations of covariate selection are described in Supplementary Section B.
 
 
 
 Model performance was evaluated using the Akaike information criterion (AIC), Brier score, Tjur’s coefficient of discrimination and McFadden’s pseudo-R². AIC values were compared only between models fitted to the same mortality outcome.
 
+ 
 
-
-Hospital sites were tracked across study years using anonymised hospital and local hospital-unit identifiers. For both mortality endpoints, deaths were attributed to the discharge site of the index hospitalisation, irrespective of where subsequent care was delivered. Hospital-level observed-to-expected (O/E) mortality ratios used expected deaths obtained by summing individual predicted probabilities. Technical details are provided in Supplementary Section C. Hospital-level analyses included `r fmt_n(numbers$hospital_sites)` sites with at least `r fmt_n(hospital$selected_threshold_summary$threshold)` eligible index sepsis hospitalisations during 2021–2024, covering `r fmt_d(100*numbers$hospital_cases/numbers$cohort_size)`% of the cohort. Inclusion under alternative minimum-volume thresholds is reported in Supplementary Table C1.
+Hospital sites were tracked across study years using anonymised hospital and local hospital-unit identifiers. For both endpoints, deaths were attributed to the index hospitalisation’s discharge site, irrespective of where subsequent care occurred. Hospital-level observed-to-expected (O/E) mortality ratios used expected deaths obtained by summing individual predicted probabilities. Technical details are provided in Supplementary Section C. Hospital-level analyses included `r fmt_n(numbers$hospital_sites)` sites with at least `r fmt_n(hospital$selected_threshold_summary$threshold)` eligible index sepsis hospitalisations during 2021–2024, covering `r fmt_d(100*numbers$hospital_cases/numbers$cohort_size)`% of the cohort. Inclusion under alternative minimum-volume thresholds is reported in Supplementary Table C1.
 
 
 
@@ -235,11 +235,11 @@ Sites were classified using funnel plots of O/E mortality ratios with pointwise 
 
 
 
-Sensitivity analyses assessed whether reclassification between in-hospital and 90-day post-admission mortality varied across risk-adjustment specifications and control-limit methods. Endpoint comparisons were repeated using unadjusted and age- and sex-adjusted models. The fully adjusted endpoint comparison was also repeated using conventional Poisson control limits.
+Sensitivity analyses assessed whether reclassification between in-hospital and 90-day post-admission mortality varied across risk-adjustment specifications and control-limit methods. Endpoint comparisons were repeated using unadjusted and age- and sex-adjusted models. The comparison between the two mortality endpoints was also repeated using the fully adjusted model with conventional Poisson control limits.
 
 
 
-Separately, holding the 90-day post-admission endpoint constant, we compared classifications from the unadjusted and age- and sex-adjusted models with those from the fully adjusted model. With the fully adjusted model, we additionally compared classifications under conventional Poisson versus overdispersion-adjusted control limits.
+Separately, holding the 90-day post-admission endpoint constant, we compared classifications from the unadjusted and age- and sex-adjusted models with those from the fully adjusted model. For the same 90-day endpoint, we also held the fully adjusted model constant and compared classifications under conventional Poisson versus overdispersion-adjusted control limits.
 
 
 
@@ -247,7 +247,7 @@ Descriptive analyses examined cause-of-death coding patterns for compatibility w
 
 
 
-Analyses were performed using R, with survival, survminer and FunnelPlotR. Reporting followed the Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) and Reporting of studies Conducted using Observational Routinely collected health Data (RECORD) guidelines [@vonelm2007; @benchimol2015] (Supplementary Table L1).
+Analyses were performed using R ‘4.4.1’, with survival, survminer and FunnelPlotR. Reporting followed the Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) and Reporting of studies Conducted using Observational Routinely collected health Data (RECORD) guidelines [@vonelm2007; @benchimol2015] (Supplementary Table L1).
 
 
 # Results
@@ -271,11 +271,10 @@ During the index hospitalisation, `r fmt_n(numbers$deaths_inhospital)` patients 
 ## Hospital mortality classifications
 
 
-Full adjustment reduced Brier scores compared with age- and sex-adjustment from `r fmt_d(model_ih_age$brier_score, 3)` to `r fmt_d(model_ih_full$brier_score, 3)` for in-hospital mortality and from `r fmt_d(model_90_age$brier_score, 3)` to `r fmt_d(model_90_full$brier_score, 3)` for 90-day post-admission mortality. An age-group-by-comorbidity interaction provided little additional improvement in Brier scores and Tjur’s R² (Supplementary Table G1). Fully adjusted models without this interaction were therefore used for primary hospital comparisons; their estimated dispersion parameters were `r fmt_d(dispersion_ih$phi, 2)` and `r fmt_d(dispersion90$phi, 2)` for in-hospital and 90-day post-admission mortality, respectively.
+Full adjustment reduced Brier scores compared with age- and sex-adjustment from `r fmt_d(model_ih_age$brier_score, 3)` to `r fmt_d(model_ih_full$brier_score, 3)` for in-hospital mortality and from `r fmt_d(model_90_age$brier_score, 3)` to `r fmt_d(model_90_full$brier_score, 3)` for 90-day post-admission mortality. An age-group-by-Elixhauser-score interaction provided little additional improvement in Brier scores and Tjur’s R² (Supplementary Table G1). Fully adjusted models without this interaction were therefore used for primary hospital comparisons. Estimated funnel-plot dispersion parameters were `r fmt_d(dispersion_ih$phi, 2)` for in-hospital mortality and `r fmt_d(dispersion90$phi, 2)` for 90-day post-admission mortality, indicating modest overdispersion for the former but not the latter.
 
 
-
-Using fully adjusted models and overdispersion-adjusted 95% control limits, `r fmt_n(classes_ih$n_sites[1])` hospital sites were classified as having lower-than-expected in-hospital mortality, `r fmt_n(classes_ih$n_sites[2])` as within the expected range, and `r fmt_n(classes_ih$n_sites[3])` as having higher-than-expected mortality. The respective counts for 90-day post-admission mortality were `r fmt_n(classes90$n_sites[1])`, `r fmt_n(classes90$n_sites[2])` and `r fmt_n(classes90$n_sites[3])` (Figure 2). Replacing in-hospital with 90-day post-admission mortality changed the classification of `r fmt_n(numbers$sites_reclassified_endpoints)` of `r fmt_n(numbers$hospital_sites)` hospital sites (`r fmt_d(numbers$pct_sites_reclassified_endpoints)`%; Table 2). Overall, `r fmt_n(sites_toward_higher)` sites moved towards a higher-mortality classification and `r fmt_n(sites_toward_lower)` towards a lower-mortality classification; none moved directly between the two extreme categories.
+Figure 2 shows hospital classifications based on fully adjusted models and overdispersion-adjusted 95% control limits. For in-hospital mortality, `r fmt_n(classes_ih$n_sites[1])` hospital sites were classified as having lower-than-expected mortality, `r fmt_n(classes_ih$n_sites[2])` as within the expected range and `r fmt_n(classes_ih$n_sites[3])` as having higher-than-expected mortality. The respective counts for 90-day post-admission mortality were `r fmt_n(classes90$n_sites[1])`, `r fmt_n(classes90$n_sites[2])` and `r fmt_n(classes90$n_sites[3])`. Table 2 cross-tabulates these classifications. Changing the endpoint reclassified `r fmt_n(numbers$sites_reclassified_endpoints)` of `r fmt_n(numbers$hospital_sites)` hospital sites (`r fmt_d(numbers$pct_sites_reclassified_endpoints)`%): `r fmt_n(sites_toward_higher)` moved towards a higher-mortality classification and `r fmt_n(sites_toward_lower)` towards a lower-mortality classification; none moved directly between the two extreme categories.
 
 
 
@@ -291,7 +290,7 @@ The proportion of hospital sites reclassified between mortality endpoints ranged
 ## Sensitivity of classification at a fixed mortality endpoint
 
 
-Holding the 90-day post-admission endpoint constant, `r fmt_n(risk_raw$n_changed)` of `r fmt_n(numbers$hospital_sites)` hospital sites (`r fmt_d(risk_raw$pct_changed)`%) were classified differently under unadjusted versus fully adjusted models, and `r fmt_n(risk_age$n_changed)` (`r fmt_d(risk_age$pct_changed)`%) under age- and sex-adjusted versus fully adjusted models (Figure 3; Supplementary Table J1). Under the fully adjusted model, all `r fmt_n(numbers$control_limits_at_90d$same_category)` sites retained the same classification with conventional Poisson and overdispersion-adjusted 95% control limits (Supplementary Table K1).
+Figure 3 shows how risk adjustment affected hospital classifications with the 90-day post-admission endpoint held constant. Compared with the fully adjusted model, `r fmt_n(risk_raw$n_changed)` of `r fmt_n(numbers$hospital_sites)` hospital sites (`r fmt_d(risk_raw$pct_changed)`%) were classified differently under the unadjusted model and `r fmt_n(risk_age$n_changed)` (`r fmt_d(risk_age$pct_changed)`%) under the age- and sex-adjusted model (Supplementary Table J1). Under the fully adjusted model, all `r fmt_n(numbers$control_limits_at_90d$same_category)` sites retained the same classification with conventional Poisson and overdispersion-adjusted 95% control limits (Supplementary Table K1).
 
 
 # Discussion
@@ -309,31 +308,30 @@ Strengths include nationwide coverage, person-level linkage of hospital discharg
 
 
 
-Sepsis ascertainment depended on administrative codes rather than clinical confirmation. Differences in coding and documentation practices between hospitals may therefore have influenced which patients were included and the comparability of hospital case mix [@rhee2017; @endrich2023; @singer2016]. The 24-month lookback identified the first eligible sepsis hospitalisation within the study period, not necessarily the patient’s first-ever sepsis episode. Limited date resolution required reconstructed event times and approximate censoring; anonymised site identifiers could be checked only for internal consistency. Hospital analyses excluded sites with fewer than `r fmt_n(hospital$selected_threshold_summary$threshold)` eligible index hospitalisations. Comparisons of hospital characteristics by direction of reclassification were descriptive and involved small groups. All deaths were attributed to the discharge site of the index hospitalisation, including deaths following transfers recorded as separate hospitalisations or subsequent readmissions. This approach provides a consistent attribution rule but does not distinguish the contributions of care delivered at the index site from those of subsequent care elsewhere. Emigration was not accounted for; deaths occurring after emigration may therefore have been missed, potentially underestimating mortality. Cause-of-death data were available only through 2024 and, in any case, the descriptive analysis provided limited guidance on the choice of follow-up window.
+Sepsis ascertainment depended on administrative codes rather than clinical confirmation. Differences in coding and documentation practices between hospitals may therefore have influenced which patients were included and the comparability of hospital case mix [@rhee2017; @endrich2023]. Even when derived solely from secondary diagnoses, the Elixhauser score may capture sepsis-related morbidity rather than exclusively pre-existing comorbidity, potentially complicating its interpretation as a measure of baseline patient risk [@giese2023]. The 24-month lookback identified the first eligible sepsis hospitalisation within the study period, not necessarily the patient’s first-ever sepsis episode. Limited date resolution required reconstructed event times and approximate censoring; anonymised site identifiers could be checked only for internal consistency. Hospital analyses excluded sites with fewer than `r fmt_n(hospital$selected_threshold_summary$threshold)` eligible index hospitalisations. Comparisons of hospital characteristics by direction of reclassification were descriptive and involved small groups. Reclassification near a control limit may reflect a small change in the mortality estimate and should not, by itself, be interpreted as a substantial difference in hospital performance [@goldstein1996]. All deaths were attributed to the discharge site of the index hospitalisation, including deaths following transfers recorded as separate hospitalisations or subsequent readmissions. This consistent attribution rule does not distinguish contributions of index-site care from subsequent care elsewhere. Emigration from Switzerland was not accounted for; deaths occurring after emigration may therefore have been missed, potentially underestimating mortality. Cause-of-death data were available only through 2024 and, in any case, the descriptive analysis provided limited guidance on the choice of follow-up window.
 
 
 ## Interpretation within the context of the wider literature
 
 
-The 90-day post-admission window encompassed virtually all in-hospital deaths, closely matching the French nationwide findings [@lamarche2015]. Studies across other conditions have likewise shown that mortality endpoints can alter hospital comparisons [@drye2012; @borzecki2010; @kristoffersen2012; @blixt2025]. Among older US patients with sepsis, Law and colleagues observed a difference between safety-net and other hospitals for in-hospital mortality that was not evident at 30 days, alongside differences in hospice discharge [@law2024]. Fixed post-admission follow-up reduces dependence on the timing of discharge and includes subsequent deaths regardless of care location. Consistent with these findings, sites in our cohort moving towards a higher-mortality category when switching from in-hospital to 90-day post-admission mortality had greater median proportions of transfers and 90-day deaths after index discharge than sites retaining their classification. This is consistent with the possibility that discharge and transfer pathways contribute to endpoint-related differences, but our comparisons were descriptive and cannot establish causation.
+The 90-day post-admission window captured postdischarge deaths, which account for a substantial mortality burden after sepsis [@fleischmann2021] and in other conditions [@blixt2025]. It also encompassed nearly all in-hospital deaths, consistent with French nationwide findings [@lamarche2015]. Studies in other patient populations have likewise shown that mortality endpoints can alter hospital comparisons [@drye2012; @borzecki2010; @kristoffersen2012; @lamarche2015]. Among older US patients with sepsis, Law and colleagues observed a difference between safety-net and other hospitals for in-hospital mortality that was not evident at 30 days, alongside differences in hospice discharge [@law2024]. Fixed post-admission follow-up reduces dependence on the timing of discharge and includes subsequent deaths regardless of care location. Consistent with these findings, sites in our cohort moving towards a higher-mortality category when switching from in-hospital to 90-day post-admission mortality had greater median proportions of transfers and 90-day deaths after index discharge than sites retaining their classification. This is consistent with the possibility that discharge and transfer pathways contribute to endpoint-related differences, but our comparisons were descriptive and cannot establish causation.
 
 
 
-Mortality after discharge may also be relevant to hospital quality assessment. In a US Medicare sepsis cohort, Mohr and colleagues found that higher risk-adjusted inpatient mortality at the hospital level was associated with greater mortality after discharge among hospital survivors [@mohr2020]. This association does not establish a causal contribution from the index admission, and the study’s discharge-anchored outcome differs from our primary post-admission endpoint. Longer follow-up may also capture the consequences of underlying illness, post-sepsis morbidity and subsequent care [@fleischmann2021; @shankar2016]. A fixed 90-day post-admission endpoint offers important methodological advantages for hospital comparisons: it provides a common observation window, captures nearly all index-hospital deaths, includes deaths after discharge and reduces dependence on discharge and transfer timing. These findings support its use as a pragmatic endpoint for hospital mortality comparisons after sepsis, although they do not establish 90 days as the optimal window for assessing care quality.
-
+Mortality after discharge may also be relevant to hospital quality assessment. Among US Medicare sepsis hospital survivors, higher hospital-level risk-adjusted inpatient mortality was associated with greater postdischarge mortality [@mohr2020]. This association does not establish causality, and the study’s discharge-anchored outcome differs from our primary post-admission endpoint. Longer follow-up may also capture the consequences of underlying illness, post-sepsis morbidity and subsequent care [@fleischmann2021; @shankar2016; @lamarche2015]. These findings support a 90-day post-admission window as a pragmatic endpoint for hospital mortality comparisons after sepsis, although they do not establish 90 days as the optimal window for assessing care quality [@lamarche2015].
 
 
 Risk adjustment was another important determinant of hospital classification. Adding routinely recorded clinical and admission characteristics improved apparent discrimination, reduced Brier scores and changed hospital classifications. This suggests that age- and sex-adjustment alone may leave relevant differences in patient case mix unaccounted for. However, better predictive performance alone does not establish that a model adequately accounts for differences in baseline patient risk or supports valid comparisons of hospital care quality [@pitches2007; @vancalster2019].
 
 
 
-With the 90-day post-admission endpoint and fully adjusted model held constant, conventional Poisson and overdispersion-adjusted control limits yielded identical hospital classifications. This finding is specific to that endpoint and model specification and does not imply that accounting for overdispersion is generally unnecessary [@spiegelhalter2005a; @spiegelhalter2005b]. Separately, classifications based on pointwise 95% control limits remain subject to random variation, particularly for sites close to the limits. Differences in classification should therefore be interpreted alongside the underlying mortality estimates and their statistical uncertainty [@goldstein1996].
+With the 90-day post-admission endpoint and fully adjusted model held constant, conventional Poisson and overdispersion-adjusted control limits yielded identical hospital classifications. Nevertheless, overdispersion should be assessed routinely and accounted for where present to reduce the risk of inappropriately classifying hospitals as outliers because of excess between-hospital variation [@spiegelhalter2005a; @spiegelhalter2005b]. 
 
 
 ## Implications for policy, practice and research
 
 
-Our findings support further development of Swiss hospital mortality monitoring through fixed-period follow-up and more comprehensive risk adjustment. Current CH-IQI mortality indicators rely on in-hospital deaths and crude or age- and sex-standardised mortality measures [@foph2026]. Although hospital discharge and mortality data are routinely collected in Switzerland, an established pathway for their routine linkage within hospital quality monitoring under the Federal Health Insurance Act (KVG/LAMal) is currently lacking. This implementation gap reflects broader challenges concerning fragmented health data and underused opportunities for linkage and secondary use in Switzerland [@zwahlen2022]. Establishing a routine linkage pathway would enable fixed-period mortality comparisons using existing national data. This would align with recommendations to strengthen outcome measurement, consider intersectoral interdependencies and make greater use of existing data sources, while addressing interoperability, institutional cooperation and regulatory requirements [@vogel2024].
+Our findings support further development of Swiss hospital mortality monitoring through fixed-period follow-up and more comprehensive risk adjustment. Current CH-IQI mortality indicators are restricted to in-hospital deaths, with risk adjustment limited to age and sex for most indicators [@foph2024]. Although hospital discharge and mortality data are routinely collected in Switzerland, an established pathway for linking them within hospital quality monitoring under the Federal Health Insurance Act (KVG/LAMal) is currently lacking. This gap is consistent with broader challenges concerning fragmented health data and underused opportunities for linkage and secondary use [@zwahlen2022]. Establishing such a pathway would enable fixed-period mortality comparisons and align with recommendations to strengthen outcome measurement, consider intersectoral interdependencies and better use existing data, while addressing interoperability, institutional cooperation and regulatory requirements [@vogel2024].
 
 
 
@@ -403,11 +401,11 @@ alt3 <- paste0(
 
 **Alt text:** `r alt1`
 
-**Figure 2**. Hospital-level funnel plots for mortality during the index hospitalisation (in-hospital mortality) and all-cause mortality within 90 days of index admission (90-day post-admission mortality). Blue lines show conventional Poisson 95% control limits, and purple lines show 95% control limits adjusted for overdispersion. Only hospital sites with at least `r fmt_n(hospital$selected_threshold_summary$threshold)` eligible index sepsis hospitalisations were included. Sources: FSO – Healthcare Statistics (GVS) and Vital Statistics (BEVNAT).
+**Figure 2**. Hospital-level funnel plots for mortality during the index hospitalisation (in-hospital mortality) and all-cause mortality within 90 days of index admission (90-day post-admission mortality). Blue lines show conventional Poisson 95% control limits, and purple lines show 95% control limits adjusted for overdispersion. Only hospital sites with at least `r fmt_n(hospital$selected_threshold_summary$threshold)` eligible index sepsis hospitalisations were included. Sources: FSO – Health Services Statistics (GVS) and Vital Statistics (BEVNAT).
 
 **Alt text:** `r alt2`
 
-**Figure 3**: Hospital mortality classification for 90-day post-admission mortality under alternative risk-adjustment specifications. Panel A compares the unadjusted and fully adjusted models; Panel B compares the age-and-sex-adjusted and fully adjusted models. Flows show movements between lower-than-expected mortality, mortality within the 95% control limits, and higher-than-expected mortality. Classification was based on overdispersion-adjusted 95% control limits.
+**Figure 3**: Hospital mortality classification for 90-day post-admission mortality under alternative risk-adjustment specifications. Panel A compares the unadjusted and fully adjusted models; Panel B compares the age-and-sex-adjusted and fully adjusted models. Alluvial plots show changes in hospital classification between lower-than-expected mortality, mortality within the 95% control limits, and higher-than-expected mortality. Classification was based on overdispersion-adjusted 95% control limits.
 
 **Alt text:** `r alt3`
 
@@ -473,25 +471,50 @@ flextable(table1) |>
 
 **Table 2**: Hospital mortality classification based on mortality during the index hospitalisation (in-hospital mortality) and all-cause mortality within 90 days of index admission (90-day post-admission mortality), using fully adjusted models and 95% overdispersion-adjusted control limits. Rows show the classification based on in-hospital mortality and columns the classification based on 90-day post-admission mortality.
 
-
 ```{r}
 #| label: table-2
 table2 <- numbers$reclassification_matrix |>
-  mutate(category_inhospital = factor(category_inhospital, levels = category_order),
-         category_90d = factor(category_90d, levels = category_order)) |>
-  pivot_wider(names_from = category_90d, values_from = n_hospitals) |>
+  mutate(
+    category_inhospital = factor(category_inhospital, levels = category_order),
+    category_90d = factor(category_90d, levels = category_order)
+  ) |>
+  pivot_wider(
+    names_from = category_90d,
+    values_from = n_hospitals,
+    values_fill = 0
+  ) |>
   arrange(category_inhospital) |>
-  select(category_inhospital, all_of(category_order))
+  select(category_inhospital, all_of(category_order)) |>
+  mutate(
+    category_inhospital = as.character(category_inhospital),
+    Total = rowSums(pick(all_of(category_order)))
+  )
+
+total_row <- table2 |>
+  summarise(across(all_of(c(category_order, "Total")), sum)) |>
+  mutate(category_inhospital = "Total", .before = 1)
+
+table2 <- bind_rows(table2, total_row)
 
 flextable(table2) |>
-  set_header_labels(category_inhospital = "In-hospital mortality classification") |>
-  add_header_row(values = c("In-hospital mortality classification",
-                           "90-day post-admission mortality classification"),
-                 colwidths = c(1, 3)) |>
-  merge_v(j = 1, part = "header") |>
-  style_table(widths = rep(1.625, 4)) |>
+  set_header_labels(
+    category_inhospital = "In-hospital mortality classification",
+    Total = "Total"
+  ) |>
+  add_header_row(
+    values = c(
+      "In-hospital mortality classification",
+      "90-day post-admission mortality classification",
+      "Total"
+    ),
+    colwidths = c(1, 3, 1)
+  ) |>
+  merge_v(j = c(1, 5), part = "header") |>
+  style_table(widths = c(1.55, 1.40, 1.40, 1.40, 0.75)) |>
+  bold(i = nrow(table2), bold = TRUE, part = "body") |>
+  bold(j = "Total", bold = TRUE, part = "body") |>
   align(j = 1, align = "left", part = "all") |>
-  align(j = 2:4, align = "center", part = "all")
+  align(j = 2:5, align = "center", part = "all")
 ```
 
 {{< pagebreak >}}

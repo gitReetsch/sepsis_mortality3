@@ -102,7 +102,7 @@ This supplementary material provides additional methodological details, variable
 # Contents
 
 - A. Sepsis case definitions: Tables A1–A2 
-- B. Risk-adjustment variables: Tables B1–B2 
+- B. Outcome anand risk-adjustment variables: Tables B1–B2 
 - C. Hospital-site identification and comparison methods: Table C1 
 - D. Patient and hospitalisation characteristics: Table D1 
 - E. Kaplan–Meier survival analyses: Figures E1–E2 
@@ -161,9 +161,8 @@ style_table(table_table_a2, widths = c(1.8, 4.7))
 
 # Supplementary Section B. Outcome and risk-adjustment variables
 
-Two binary mortality outcomes were used in the regression models and hospital-level comparisons (Table B1). In addition, descriptive mortality was summarised at 30, 60, 90, 180, and 365 days from admission and discharge. Admission-based Kaplan–Meier analyses are described separately in Supplementary Section E.
+Two binary mortality outcomes were used in the regression models and hospital-level comparisons (Table B1). In-hospital mortality (variable *death_in_hospital*) was defined by a discharge disposition of “deceased” in GVS (*discharge_decision* = 5). Additional deaths were identified from a non-missing discharge-to-death interval supplied through linkage of GVS and BEVNAT records. The 90-day post-admission mortality outcome (*death_90d_postadmission*) included deaths from either source occurring within 90 days of index admission, applying the interval rules described below.
 
-Deaths were ascertained from GVS discharge records and linked BEVNAT data. GVS in-hospital deaths were retained regardless of the recorded discharge-to-death interval. For BEVNAT-only records, intervals of −1 day or longer were accepted; intervals below −1 day were excluded as implausible. This applied to `r fmt_n(numbers$deaths_bevnat_only_excluded)` records. The excluded intervals in this analysis were −978 and −4,034 days. For time-to-death calculations, the interval was set to zero for GVS deaths and for accepted BEVNAT-only records with a negative interval. Time from admission was calculated as the length of the index hospitalisation plus this adjusted interval. A death contributed to the 90-day post-admission outcome only if the calculated time from admission was 90 days or less.
 
 ::: {custom-style="Beschriftung1"}
 **Supplementary Table B1.** Operational definitions of binary mortality outcomes.
@@ -174,9 +173,17 @@ Deaths were ascertained from GVS discharge records and linked BEVNAT data. GVS i
 style_table(mortality$outcome_definitions, widths = c(1.7, 4.8))
 ```
 
+::: {custom-style="Paper Paragraph after table"}
+Deaths recorded as in-hospital deaths in GVS were retained regardless of the recorded discharge-to-death interval. For deaths identified through linkage but not recorded as in-hospital deaths, intervals of −1 day or longer were accepted; intervals below −1 day were excluded as implausible and were not counted as death events. This affected `r fmt_n(numbers$deaths_bevnat_only_excluded)` records, with intervals of −978 and −4,034 days, implying death approximately 2.7 and 11.0 years before discharge, respectively.
+:::
+
+For time-to-death calculations, the discharge-to-death interval was set to zero for deaths recorded as in-hospital deaths and for deaths identified through linkage with an accepted negative interval (−1 day). Time from admission to death was calculated as the length of the index hospitalisation (*episode_length*) plus this adjusted interval. Unlike length of stay, episode length includes time spent outside hospital during temporary discharges. A death contributed to the 90-day post-admission outcome only if the calculated time from admission to death was 90 days or less.
+
+In addition, descriptive mortality was summarised at 30, 60, 90, 180 and 365 days from admission and discharge. Admission-based Kaplan–Meier analyses are described separately in Supplementary Section E.
+
 Definitions of the variables used in the risk-adjustment models are summarised in Supplementary Table B2. All variables were derived from records of the index hospitalisation. The sepsis severity variable was a study-specific diagnosis-based proxy and not a validated clinical severity score or a reconstruction of the Sequential Organ Failure Assessment (SOFA) score. Descriptive Kaplan–Meier analyses showed distinct mortality patterns across the diagnosis-based severity categories, suggesting prognostic information within this cohort. However, SIRS and “severe sepsis” are not defining categories in the Sepsis-3 framework, and their coding may vary across hospitals. These survival differences alone do not establish the proxy’s suitability for risk adjustment in hospital benchmarking.
 
-Adjustment sought to account for measured differences in patient case mix. However, comorbidity and severity measures derived from discharge diagnoses may also reflect conditions arising during hospitalisation and differences in coding practices or documentation completeness, rather than solely baseline risk. Intensive care admission and mechanical ventilation were described but excluded from adjustment because adjusting for care delivered after admission could obscure differences associated with care. The interaction model assessed whether greater complexity improved predictive performance or changed hospital-level estimates.
+Adjustment sought to account for measured differences in patient case mix. However, comorbidity and severity measures derived from discharge diagnoses may also reflect conditions arising during hospitalisation and differences in coding practices or documentation completeness, rather than solely baseline risk. Intensive care admission and mechanical ventilation were described but excluded from adjustment because adjusting for care delivered after admission could obscure differences associated with care. The interaction model added an age-group-by-Elixhauser-score interaction to assess whether greater complexity improved predictive performance or changed hospital-level estimates.
 
 ::: {custom-style="Beschriftung1"}
 **Supplementary Table B2.** Operational definitions of variables included in the risk-adjustment models.
@@ -194,14 +201,18 @@ table_table_b2 <- tibble::tribble(
   "Diagnosis-based sepsis severity proxy", "GVS diagnosis fields", "Assigned hierarchically from the recorded sepsis-trigger codes: septic shock (R57.2), followed by severe sepsis/SIRS with organ dysfunction (R65.1), SIRS without organ dysfunction (R65.0), and other explicit sepsis codes. The first applicable category was used."
 )
 names(table_table_b2) <- c("Variable", "Source", "Operationalisation")
-style_table(table_table_b2, widths = c(1.3, 1.2, 4))
+style_table(table_table_b2, widths = c(1, 1, 4.5))
 ```
 
 {{< pagebreak >}}
 
 # Supplementary Section C. Hospital-site identification and comparison methods
 
-Anonymised hospital and local hospital-unit identifiers were used to construct a longitudinal hospital-site identifier across study years. Because hospital identities were not disclosed, site assignments could be assessed only through internal consistency checks. Expected deaths were calculated by summing individual predicted probabilities from the corresponding mortality model. Observed-to-expected ratios were calculated as observed divided by expected deaths; indirectly standardised mortality rates were obtained by multiplying these ratios by overall cohort mortality.
+Anonymised hospital and local hospital-unit identifiers were used to construct a longitudinal hospital-site identifier across study years. Because hospital identities were not disclosed, site assignments could be assessed only through internal consistency checks comparing hospital–site mappings across years. 
+
+
+Expected deaths were calculated by summing individual predicted probabilities from the corresponding mortality model. Observed-to-expected ratios were calculated as observed divided by expected deaths; indirectly standardised mortality rates were obtained by multiplying these ratios by the overall cohort mortality.
+
 
 Hospital-level analyses were restricted to hospital sites with at least `r fmt_n(hospital$selected_threshold_summary$threshold)` eligible index sepsis hospitalisations pooled across 2021–2024. This analytical threshold was selected to reduce instability in estimates from very small hospital sites while retaining most of the study population. At this threshold, `r fmt_n(numbers$hospital_sites)` hospital sites and `r fmt_n(numbers$hospital_cases)` of `r fmt_n(numbers$cohort_size)` index hospitalisations (`r fmt_d(hospital$selected_threshold_summary$pct_sepsis_cases)`%) were retained. Supplementary Table C1 shows how alternative minimum-volume thresholds affected the numbers of hospital sites and index hospitalisations retained.
 
@@ -283,7 +294,7 @@ ggplot2::ggsave(file.path(figure_dir, "figure-e1.png"), figure_e1,
 {{< pagebreak >}}
 
 ::: {custom-style="Beschriftung1"}
-**Supplementary Figure E2.** Kaplan–Meier survival from admission for the index sepsis hospitalisation by patient and hospitalisation characteristics, 2021–2024. Follow-up was censored at 365 days after admission or on 31 December 2025, whichever occurred first. Curves are unadjusted. ICU admission, ICU length of stay, and mechanical ventilation describe care received during the index hospitalisation; differences between these groups should not be interpreted as effects of treatment. ICU, intensive care unit; SIRS, systemic inflammatory response syndrome.
+**Supplementary Figure E2.** Kaplan–Meier survival from admission for the index sepsis hospitalisation by patient and hospitalisation characteristics, 2021–2024. Follow-up was censored at 365 days after admission. Curves are unadjusted. ICU admission, ICU length of stay, and mechanical ventilation describe care received during the index hospitalisation. ICU, intensive care unit; SIRS, systemic inflammatory response syndrome.
 :::
 
 ```{r}
@@ -429,35 +440,54 @@ print(figure_e2)
 # Supplementary Section F. Cause-of-death coding classification
 
 
-Cause-of-death information was used to describe how recorded coding patterns varied with time from admission for the index sepsis hospitalisation. The analysis was descriptive and was not intended to establish whether individual deaths were causally attributable to sepsis.
+Data from the Swiss Federal Statistical Office’s (FSO) Cause of Death Statistics (CoD) were used to explore the potential attribution of deaths to sepsis across intervals following index admission. This descriptive assessment relied on recorded causes of death rather than individual causal adjudication.
 
-Codes were searched across all five available cause-of-death fields. Four code groups were used: codes included in the explicit administrative sepsis definition, infection codes, external-cause codes, and prespecified competing non-infectious cause codes (Supplementary Table F1). Deaths with an available Cause of Death Statistics (CoD) record were assigned to mutually exclusive categories using the hierarchical rules described below.
+Codes were searched across all available cause-of-death variables. Deaths with an available CoD record were assigned to mutually exclusive categories using the hierarchy in Supplementary Table F1; the first applicable category was assigned. Deaths without an available CoD record were identified separately.
 
-Classification followed a hierarchical rule, with the first applicable category assigned: (1) mixed coding pattern, where a code from the explicit sepsis definition or an infection code occurred together with an external-cause or competing non-infectious cause code; (2) code from the explicit sepsis definition; (3) infection code without a code from the explicit sepsis definition; (4) unknown or ill-defined, where all five fields were missing, blank or coded R99; (5) external cause; (6) competing non-infectious cause; and (7) no clear classification for all remaining patterns. Deaths without an available CoD record were identified separately.
+CoD data were available through 2024, whereas mortality follow-up extended through 31 December 2025, limiting interpretation at longer follow-up intervals.
 
 ::: {custom-style="Beschriftung1"}
-**Supplementary Table F1.** Code groups used to classify cause-of-death coding patterns. Codes from Table A1 were matched exactly after removal of decimal points. Infection, external-cause and competing non-infectious cause codes were matched by prefix, including subcategories.
+**Supplementary Table F1.** Categories, code groups and hierarchy used to classify cause-of-death records. The first applicable category was assigned. Codes from Supplementary Table A1 were matched exactly after removal of decimal points. Infection, external-cause and competing non-infectious cause codes were matched by prefix, including subcategories.
 :::
 
 ```{r}
 #| label: table-f1
+
 table_table_f1 <- tibble::tribble(
-  ~V1, ~V2,
-  "Codes included in the explicit administrative sepsis definition", "All codes listed in Supplementary Table A1.",
-  "Infection codes", "Infection codes listed in Supplementary Table A2, plus J69, N39.0, T81.4, T82.6, T82.7, T84.5, T84.6, T84.7, T85.7 and O86. Organ-dysfunction codes are not included.",
-  "External-cause codes", "V, W, X.",
-  "Prespecified competing non-infectious cause codes", "I21, I71, T79, I60, I61, I62."
+  ~Category, ~`Classification rule and code groups`, ~Hierarchy,
+  "Sepsis-specific code",
+  "Any code included in the explicit administrative sepsis definition (Supplementary Table A1).",
+  "2",
+  "Infection code without sepsis-specific code",
+  "Infection codes in Supplementary Table A2, plus J69, N39.0, T81.4, T82.6, T82.7, T84.5, T84.6, T84.7, T85.7 and O86, without a code from the explicit sepsis definition. Organ-dysfunction codes are excluded.",
+  "3",
+  "Mixed coding pattern",
+  "A code from the explicit sepsis definition or an infection code, together with an external-cause or competing non-infectious cause code.",
+  "1",
+  "Competing non-infectious cause",
+  "I21, I71, T79, I60, I61 or I62 codes.",
+  "6",
+  "External cause",
+  "V, W or X codes.",
+  "5",
+  "No clear classification",
+  "All remaining coding patterns.",
+  "7",
+  "Unknown / ill-defined",
+  "All five cause-of-death variables missing, blank or coded R99.",
+  "4"
 )
-names(table_table_f1) <- c("Code group", "Code set or reference")
-style_table(table_table_f1, widths = c(2.1, 4.4))
+style_table(table_table_f1, widths = c(1.8, 3.8, 0.9))
+
 ```
 
-Cause-of-death data were available through 2024, whereas mortality follow-up extended through 31 December 2025. Consequently, cause-of-death records were unavailable for some deaths, limiting interpretation of coding patterns at longer follow-up intervals.
 
-Among deaths with an available CoD record, codes included in the explicit administrative sepsis definition were most frequent early after admission and became less common with increasing time from admission. Infection codes without a code from the explicit sepsis definition remained present throughout the first year, while the proportion of deaths with no clear classification increased. The proportion of deaths without an available CoD record also increased across later follow-up intervals.
+::: {custom-style="Paper Paragraph after table"}
+Among deaths with an available CoD record, codes from the explicit sepsis definition became less frequent with increasing time from admission. Infection codes remained present throughout the first year, while the proportions with no clear classification or without an available CoD record increased. These patterns provided limited guidance for selecting an optimal mortality follow-up window.
+:::
 
 ::: {custom-style="Beschriftung1"}
-**Supplementary Figure F1.** Cause-of-death coding patterns by time from admission for the index sepsis hospitalisation. Deaths occurring within 365 days of admission were assigned to mutually exclusive categories using the code groups in Supplementary Table F1 and the hierarchical rules described in Section F. Coloured segments show the distribution of categories among deaths with an available Cause of Death Statistics (CoD) record and sum to 100% within each interval. The green above 100% separately indicates the percentage of all deaths in that interval without an available CoD record. Coding patterns do not establish whether deaths were attributable to sepsis. Sources: Swiss Federal Statistical Office—Healthcare Statistics (GVS), Cause of Death Statistics (CoD), and Vital Statistics (BEVNAT).
+**Supplementary Figure F1.** Cause-of-death coding patterns by time from index sepsis admission. Deaths within 365 days were classified using Supplementary Table F1. Coloured segments show category distributions among deaths with an available Cause of Death Statistics (CoD) record and sum to 100% within each interval. Green bars above 100% separately show the percentage of all deaths in each interval without an available CoD record. Sources: Swiss Federal Statistical Office — Health Services Statistics (GVS), Cause of Death Statistics (CoD), and Vital Statistics (BEVNAT).
 :::
 
 ```{r}
@@ -546,7 +576,7 @@ style_table(table_g1, widths = c(1.25, 1.6, 0.35, 0.8, 0.8, 0.8, 0.9), font_size
 
 # Supplementary Section H. Hospital characteristics by direction of endpoint-related reclassification
 
-Hospital characteristics were compared descriptively across sites moving towards higher or lower mortality classifications and sites whose classification remained unchanged when switching from in-hospital to 90-day post-admission mortality. Comparisons used fully adjusted models and overdispersion-adjusted 95% control limits.
+Hospital characteristics were compared descriptively across sites moving towards higher or lower mortality classifications and sites whose classification remained unchanged when switching from in-hospital to 90-day post-admission mortality. Comparisons are based on hospital classifications derived from fully adjusted models with overdispersion-adjusted 95% control limits.
 
 ::: {custom-style="Beschriftung1"}
 **Supplementary Table H1.** Hospital characteristics by direction of reclassification from in-hospital to 90-day post-admission mortality. Values are medians (interquartile ranges) across hospital sites within each group. Length of stay was first summarised as the median within each hospital site. The proportion of deaths occurring after discharge was calculated among all deaths within 90 days of admission at each site. Transfer percentages were calculated among eligible index hospitalisations at each site. Higher and lower classifications refer to movement between the categories “lower than expected”, “within control limits” and “higher than expected”; they do not indicate established differences in care quality.

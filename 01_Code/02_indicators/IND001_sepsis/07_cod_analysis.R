@@ -231,7 +231,7 @@ p_cod_evidence <- ggplot2::ggplot() +
       "Coloured segments show the distribution among deaths with an available CoD record and sum to 100% ",
       "within each interval. The dark-grey segment above 100% shows the percentage without an available CoD record.\n",
       "Coding patterns do not establish whether deaths were attributable to sepsis. Sources: Swiss Federal ",
-      "Statistical Office—Healthcare Statistics (GVS), Cause of Death Statistics (CoD), and Vital Statistics (BEVNAT)."
+      "Statistical Office — Health Services Statistics (GVS), Cause of Death Statistics (CoD), and Vital Statistics (BEVNAT)."
     )
   ) +
   ggplot2::theme_bw() +

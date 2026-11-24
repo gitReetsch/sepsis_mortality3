@@ -256,11 +256,13 @@
     "container-title-short": "Intensive Care Med Paediatr Neonatal"
   },
   {
-    "id": "foph2026",
+    "id": "foph2024",
     "issued": {
       "date-parts": [
         [
-          2026
+          2024,
+          9,
+          5
         ]
       ]
     },
@@ -270,10 +272,10 @@
       }
     ],
     "type": "report",
-    "title": "Quality indicators of the Swiss acute care hospitals 2024",
+    "title": "CH-IQI / G-IQI V5.5: FAQ / Erläuterungen. Version 5.5.0",
     "publisher": "Federal Office of Public Health",
     "publisher-place": "Bern",
-    "URL": "https://opendata.swiss/en/dataset/qualitatsindikatoren-der-schweizer-akutspitaler-2024"
+    "URL": "https://spitalstatistik-ld.bagapps.ch/data/download/FAQ_CHIQI-GIQI_V5.5_Erlaeuterungen_V5.5.0.pdf?v=1740817749"
   },
   {
     "id": "fleischmann2021",
@@ -977,5 +979,40 @@
     "publisher": "Swiss National Science Foundation",
     "publisher-place": "Bern",
     "URL": "https://www.smarterhealthcare.ch/fileadmin/user_upload/Website/Downloads/nrp74-synthesis-working-paper-health-care-data-2.pdf"
-  }
+  },
+{
+  "id": "giese2023",
+  "type": "chapter",
+  "author": [
+    {
+      "given": "Alice",
+      "family": "Giese"
+    }
+  ],
+  "issued": {
+    "date-parts": [[2023]]
+  },
+  "title": "Entwicklung IQM in der Schweiz",
+  "container-title": "Handbuch IQM: Konsequent transparent – Qualität mit Routinedaten!",
+  "editor": [
+    {
+      "given": "Jörg",
+      "family": "Martin"
+    },
+    {
+      "given": "Jan-Peter",
+      "family": "Braun"
+    },
+    {
+      "given": "Josef",
+      "family": "Zacher"
+    }
+  ],
+  "edition": "3",
+  "publisher": "Medizinisch Wissenschaftliche Verlagsgesellschaft",
+  "publisher-place": "Berlin",
+  "page": "261-270",
+  "ISBN": "978-3-95466-739-0",
+  "URL": "https://mwv-open.de/chapters/46/files/2f5e1fa9-079f-41a4-9212-7a46d762ca8f.pdf"
+}
 ]
